@@ -1,0 +1,134 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Core styles */
+// Variables 
+$mainColor: rgb(170, 10, 42);
+$secondaryColor: #008080;
+$whiteColor: #ffffff;
+$blackColor: #000000;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 16 * 0.625 = 10, => 1rem = 10px */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    // overflow: hidden;
+    &._lock {
+        overflow: hidden;
+    }
+}
+
+/* Header section styles */
+.header {
+    background-color: $blackColor;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    &__logo {
+        background-color: $whiteColor;
+        font-size: 2rem;
+        padding: .5rem 1rem;
+        text-decoration: none;
+    }
+}
+
+/* Menu styles */
+.menu {
+    &__icon {
+        display: block;
+        width: 3rem;
+        height: 1.8rem;
+        position: relative;
+        z-index: 5;
+        cursor: pointer;
+
+        span {
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: .2rem;
+            background-color: $whiteColor;
+            
+            &:first-child {
+                top: 0;
+                transform: translateY(0);
+            }
+
+            &:last-child {
+                top: auto;
+                bottom: 0;
+                transform: translateY(0);
+            }
+        }
+    }
+
+    &__body {
+        
+    }
+
+    &__list {
+        list-style-type: none;
+        display: flex;
+        gap: 3rem;
+    }
+
+    &__link {
+        color: $whiteColor;
+        font-size: 1.9rem;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/* Main sections styles */
+section {
+    &:nth-child(even) {
+        background-color: $mainColor;
+    }
+    &:nth-child(odd) {
+        background-color: $secondaryColor;
+    }
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .title {
+        font-size: 10rem;
+        color: $whiteColor;
+
+        @media (max-width: 768px) {
+            font-size: 3rem;
+        }
+    }
+}
+
+/* Footer section styles */
+.footer {
+    height: 40vw;
+    background-color: $blackColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $whiteColor;
+    font-size: 10rem; 
+
+    @media (max-width: 768px) {
+        font-size: 3rem;
+    }
+} 
+
